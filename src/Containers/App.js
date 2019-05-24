@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import RepoList from '../Components/RepoList';
 import axios from 'axios';
+import moment from 'moment';
 
 
 class App extends Component {
@@ -18,12 +19,14 @@ class App extends Component {
     componentDidMount(){
         // Getting the data from Github API
 
+        const DATE_30_DAYS_BEFORE = moment().subtract(30, 'days').format('YYYY-MM-DD')
+
         axios.get(
-            'https://api.github.com/search/repositories?q=created:>2017-10-22&sort=stars&order=desc&page=3'
+            ` https://api.github.com/search/repositories?q=created:>${ DATE_30_DAYS_BEFORE }&sort=stars&order=desc&page=3 `
         )
 
         .then(resp => {
-            console.log(resp);
+            // console.log(resp);
             this.setState({
               repo: resp.data.items,
             });
