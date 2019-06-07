@@ -2,6 +2,7 @@
 // import './App.css';
 import React, { Component } from 'react';
 import RepoList from '../Components/RepoList';
+import Loading from '../Components/Loading';
 // import Repo from '../Components/Repo';
 import axios from 'axios';
 import moment from 'moment';
@@ -80,7 +81,6 @@ class App extends Component {
         page: prevState.page + page,
         loading: true,
       }))
-
       this.loadRepo();
     }
 
@@ -92,7 +92,7 @@ class App extends Component {
       return (
         <div>
           <RepoList repo={ repo } />
-          <div> Loading ...</div>
+          <Loading></Loading>
         </div>
       )
   }
