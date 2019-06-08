@@ -1,68 +1,71 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Frontend coding challenge
 
-## Available Scripts
+## Idea of the App
 
-In the project directory, you can run:
+The task is to implement a small webapp that will list the most starred Github repos that were created in the last 30 days. You'll be fetching the sorted JSON data directly from the Github API (Github API explained down below).
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- [x] As a User I should be able to list the most starred Github repos that were created in the last 30 days.
+- [x] As a User I should see the results as a list. One repository per row.
+- [x] As a User I should be able to see for each repo/row the following details :
+    - Repository name
+    - Repository description
+    - Number of stars for the repo.
+    - Number of issues for the repo.
+    - Username and avatar of the owner.
+- [x] As a User I should be able to keep scrolling and new results should appear (pagination).
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How to get the data from Github
 
-### `npm run build`
+To get the most starred Github repos created in the last 30 days (relative to 2017-11-22), you'll need to call the following endpoint :
+`https://api.github.com/search/repositories?q=created:>2017-10-22&sort=stars&order=desc`
+The JSON data from Github will be paginated (you'll receive around 100 repos per JSON page).
+To get the 2nd page, you add `&page=2` to the end of your API request :
+`https://api.github.com/search/repositories?q=created:>2017-10-22&sort=stars&order=desc&page=2`
+To get the 3rd page, you add `&page=3` ... etc
+You can read more about the Github API over [here](https://developer.github.com/v3/search/#search-repositories
+).
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## ScreenShoot
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![alt text](ScreenShoot.png)
 
-### `npm run eject`
+Here's what each element represents :
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![alt text](https://raw.githubusercontent.com/hiddenfounders/frontend-coding-challenge/master/row_explained.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Technologies Used in Project
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- React
+- Material - UI
+- Moment.js
+- Axios
+- Github API
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Setup
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+git clone https://github.com/Azghour-Saad/frontend-coding-challenge.git
 
-### Code Splitting
+cd frontend-coding-challenge
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+npm install
+```
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Running the app
 
-### Making a Progressive Web App
+To get the app up and running run :
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+```
+npm start
+```
 
-### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<b>Finnaly, The project will be available at :   </b>  **http://localhost:3000/ to view it in the browser.**
