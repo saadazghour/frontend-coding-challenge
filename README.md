@@ -1,4 +1,5 @@
-# Frontend coding challenge
+[![JavaScript Style Guide](https://img.shields.io/badge/Success-brightgreen.svg?style=flat-square&for-the-badge&logo=Verizon)](https://github.com/Azghour-Saad/frontend-coding-challenge) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](https://standardjs.com)
+# Front-end coding challenge
 
 ## Idea of the App
 
@@ -68,4 +69,4 @@ npm start
 ```
 
 
-<b>Finnaly, The project will be available at :   </b>  **http://localhost:3000/ to view it in the browser.**
+<b>Finnaly, The project will be available at :   </b>  **http://localhost:3000 to view it in the browser.**
